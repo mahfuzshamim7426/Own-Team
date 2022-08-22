@@ -6,11 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Own Team</title>
+    <!-- Tailwind CDN Link  -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Link -->
     <script src="https://kit.fontawesome.com/758e4cbfa9.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
+    <!-- ================Header Section Start=============== -->
     <header class="bg-[url('images/header_background.png')] h-[30rem]">
         <h1 class="text-6xl font-bold text-yellow-300 text-center pt-44 pb-8 font-sans md:font-serif">Select Your Own
             Best
@@ -22,11 +25,14 @@
             manage the team properly
         </p>
     </header>
+    <!--=============== Header Section End============ -->
+
+    <!-- ===========Main Section Start============ -->
     <main>
-
-
         <section class="bg-slate-700 py-16">
             <div class="container mx-auto grid grid-cols-4 gap-2 px-10">
+
+                <!-- =====Players Part Start======= -->
 
                 <div class="col-span-3">
                     <div class="grid grid-cols-3 gap-2">
@@ -36,8 +42,8 @@
                             </div>
                             <div class="text-center mt-4">
                                 <h2 class="text-2xl text-white font-medium">Kaka</h2>
-                                <button class=" px-20 py-2 bg-sky-400 my-3 text-xl font-medium "
-                                    type="button">Select</button>
+                                <button class=" px-20 py-2 bg-sky-400 my-3 text-xl font-medium " type="button"
+                                    onclick="addToplayersArray(this)">Select</button>
                             </div>
                         </div>
                         <div class="border border-sky-500 m-2 bg-black">
@@ -46,8 +52,8 @@
                             </div>
                             <div class="text-center mt-4">
                                 <h2 class="text-2xl text-white font-medium">Lionel Messi</h2>
-                                <button class=" px-20 py-2 bg-sky-400 my-3 text-xl font-medium"
-                                    type="button">Select</button>
+                                <button class=" px-20 py-2 bg-sky-400 my-3 text-xl font-medium " type="button"
+                                    onclick="addToplayersArray(this)">Select</button>
                             </div>
                         </div>
                         <div class="border border-sky-500 m-2 bg-black">
@@ -56,8 +62,8 @@
                             </div>
                             <div class="text-center mt-4">
                                 <h2 class="text-2xl text-white font-medium">Neymar Jr</h2>
-                                <button class=" px-20 py-2 bg-sky-400 my-3 text-xl font-medium"
-                                    type="button">Select</button>
+                                <button class=" px-20 py-2 bg-sky-400 my-3 text-xl font-medium " type="button"
+                                    onclick="addToplayersArray(this)">Select</button>
                             </div>
                         </div>
                         <div class="border border-sky-500 m-2 bg-black">
@@ -66,8 +72,8 @@
                             </div>
                             <div class="text-center mt-4">
                                 <h2 class="text-2xl text-white font-medium">Ronaldinho</h2>
-                                <button class=" px-20 py-2 bg-sky-400 my-3 text-xl font-medium"
-                                    type="button">Select</button>
+                                <button class=" px-20 py-2 bg-sky-400 my-3 text-xl font-medium " type="button"
+                                    onclick="addToplayersArray(this)">Select</button>
                             </div>
                         </div>
                         <div class="border border-sky-500 m-2 bg-black">
@@ -76,8 +82,8 @@
                             </div>
                             <div class="text-center mt-4">
                                 <h2 class="text-2xl text-white font-medium">Cristiano Ronaldo</h2>
-                                <button class=" px-20 py-2 bg-sky-400 my-3 text-xl font-medium"
-                                    type="button">Select</button>
+                                <button class=" px-20 py-2 bg-sky-400 my-3 text-xl font-medium " type="button"
+                                    onclick="addToplayersArray(this)" this.disabled=true;>Select</button>
                             </div>
                         </div>
                         <div class="border border-sky-500 m-2 bg-black">
@@ -86,17 +92,33 @@
                             </div>
                             <div class="text-center mt-4">
                                 <h2 class="text-2xl text-white font-medium">Mohammad Salah</h2>
-                                <button class=" px-20 py-2 bg-sky-400 my-3 text-xl font-medium"
-                                    type="button">Select</button>
+                                <button class=" px-20 py-2 bg-sky-400 my-3 text-xl font-medium " type="button"
+                                    onclick="addToplayersArray(this)">Select</button>
                             </div>
                         </div>
                     </div>
                 </div>
+
+                <!-- ========Players Part End======= -->
+
+                <!-- ========Calculation Part Start====== -->
+
                 <div>
                     <div class="border border-sky-500 bg-black m-2">
                         <div class="text-center mt-4">
-                            <h2 class="text-2xl text-cyan-300 font-medium">Selected - V</h2>
+                            <h2 class="text-2xl text-cyan-300 font-medium" id="total-players">Selected - V</h2>
                             <img class="m-auto" src="images/Ureg-Ureg Marker.png" alt="">
+                        </div>
+                        <div class="overflow-x-auto">
+                            <table class="table table-zebra w-full">
+                                <!-- head -->
+                                <tbody id="players-array" class="text-slate-400">
+                                    <!-- <tr class="text-white">
+                                        <th class="pl-2">1</th>
+                                        <td>Cy Ganderton</td>
+                                    </tr> -->
+                                </tbody>
+                            </table>
                         </div>
                     </div>
 
@@ -107,35 +129,43 @@
                             <div class="flex mt-3 mx-2">
                                 <h3 class="text-slate-400">Per Player</h3>
                                 <input class="border border-sky-500 bg-black w-2/3 ml-4 text-white" type="text" name=""
-                                    id="">
+                                    id="player-cost">
                             </div>
-                            <button class="mx-2 mt-3 px-24 py-2 bg-sky-400 font-medium" type="submit">Calculate</button>
+                            <button id="player-cost-calculation" class="mx-2 mt-3 px-24 py-2 bg-sky-400 font-medium"
+                                type="submit">Calculate</button>
                         </div>
                         <div class="flex mt-3 mx-2">
                             <h3 class="text-slate-400">Player Expenses</h3>
+                            <p class="text-slate-400 ml-5">$ <span id="total-player-cost"></span></p>
                         </div>
                         <div class="flex mt-3 mx-2">
                             <h3 class="text-slate-400">Manager</h3>
                             <input class="border border-sky-500 bg-black w-2/3 ml-4 text-white" type="text" name=""
-                                id="">
+                                id="total-manager-cost">
                         </div>
                         <div class="flex mt-3 mx-2">
                             <h3 class="text-slate-400">Coach</h3>
                             <input class="border border-sky-500 bg-black w-2/3 ml-9 text-white" type="text" name=""
-                                id="">
+                                id="total-coach-cost">
                         </div>
-                        <button class="mx-2 mt-3 px-24 py-2 bg-sky-400 font-medium" type="submit">Calculate</button>
+                        <button id="total-calculate" class="mx-2 mt-3 px-24 py-2 bg-sky-400 font-medium"
+                            type="submit">Calculate</button>
                         <div class="flex mt-3 mx-2 pb-2">
                             <h3 class="text-slate-400">Total</h3>
+                            <p class="text-slate-400 ml-24">$ <span id="total-cost"></span></p>
+
                         </div>
                     </div>
-
                 </div>
+                <!-- ========Calculation Part End======= -->
 
             </div>
 
         </section>
     </main>
+    <!-- ============Main Section End =====================-->
+
+    <!-- ==============Footer Section Start================ -->
     <footer class="py-16 bg-slate-900">
         <div class="text-center">
             <a target="_blank" href="https://www.facebook.com/"><i
@@ -149,8 +179,10 @@
         </div>
         <h3 class="text-center mt-2 text-slate-400">Copyright @ 2022 All Rights Reserved</h3>
     </footer>
+    <!-- ============Footer Section End============ -->
 
-    <script src="js/apps.js"></script>
+    <!-- ===========JavaScript Link==============  -->
+    <script src="js/players.js"></script>
 </body>
 
 </html>
