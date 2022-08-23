@@ -18,8 +18,7 @@ function displayPlayers() {
 }
 
 function addToplayersArray(element) {
-    element.disabled = true;
-    element.classList.add('opacity-50');
+
     const pdName = element.parentNode.children[0].innerText;
     const pd = {
         pdName: pdName
@@ -31,6 +30,8 @@ function addToplayersArray(element) {
         alert("You can add maximum 5 Players");
         return;
     }
+    element.disabled = true;
+    element.classList.add('opacity-50');
     console.log(playersArray);
 
     displayPlayers();
