@@ -15,17 +15,11 @@ function displayPlayers() {
                 <td>${playersArray[i].pdName}</td>
                 `;;
         const playersContainer = playersArrayContainer.appendChild(tr);
-
-    }
-    // document.getElementsByClass("myBtn").disabled = true;
-    // button.setAttribute('disabled', '');
-    const inputs = document.getElementsByClassName('myBtn');
-    for (let i = 0; i < inputs.length; i++) {
-        inputs[i].disabled = false;
     }
 }
 
 function addToplayersArray(element) {
+    element.disabled = true;
     const pdName = element.parentNode.children[0].innerText;
     const pd = {
         pdName: pdName
@@ -40,6 +34,11 @@ function addToplayersArray(element) {
     console.log(playersArray);
 
     displayPlayers();
+    // const selecedButton = document.getElementsByClassName('myBtn')
+    // selecedButton.setAttribute('disabled', 'true')
+    // const selecedButton = document.getElementById('select-btn')
+    // selecedButton.setAttribute('disabled', 'true')
+    // selecedButton.classList.add('bg-sky-200');
 }
 
 
