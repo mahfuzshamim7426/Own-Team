@@ -2,8 +2,6 @@ const playersArray = [];
 
 function displayPlayers() {
     let totalPlayer = 0;
-
-
     const playersArrayContainer = document.getElementById("players-array");
     playersArrayContainer.textContent = '';
 
@@ -18,7 +16,6 @@ function displayPlayers() {
 }
 
 function addToplayersArray(element) {
-
     const pdName = element.parentNode.children[0].innerText;
     const pd = {
         pdName: pdName
@@ -33,10 +30,8 @@ function addToplayersArray(element) {
     element.disabled = true;
     element.classList.add('opacity-50');
     console.log(playersArray);
-
     displayPlayers();
 }
-
 
 // ********************Calculation Part 
 // ********************
@@ -49,6 +44,7 @@ function playerCostElement(elementsId) {
     totalPlayerCost.innerText = totalPlayersPayment;
     return totalPlayersPayment;
 }
+
 function managementCostElement(managementId) {
     const totalManagementCost = document.getElementById(managementId);
     const totalManagementCostCountString = totalManagementCost.value;
@@ -66,11 +62,9 @@ document.getElementById('total-calculate').addEventListener('click', function ()
     const playerEmlementCost = playerCostElement('player-cost');
     const totalManagerrCost = managementCostElement('total-manager-cost');
     const totalCoachCost = managementCostElement('total-coach-cost');
-
     const totalCost = document.getElementById('total-cost');
     const totalCostCount = totalCost.innerText;
     const totalPayment = playerEmlementCost + totalManagerrCost + totalCoachCost;
-
     totalCost.innerText = totalPayment;
 
 })
