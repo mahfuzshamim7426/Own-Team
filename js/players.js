@@ -1,5 +1,4 @@
 const playersArray = [];
-// players-playersArray
 
 function displayPlayers() {
     let totalPlayer = 0;
@@ -35,11 +34,6 @@ function addToplayersArray(element) {
     console.log(playersArray);
 
     displayPlayers();
-    // const selecedButton = document.getElementsByClassName('myBtn')
-    // selecedButton.setAttribute('disabled', 'true')
-    // const selecedButton = document.getElementById('select-btn')
-    // selecedButton.setAttribute('disabled', 'true')
-    // selecedButton.classList.add('bg-sky-200');
 }
 
 
@@ -61,10 +55,12 @@ function managementCostElement(managementId) {
     return totalManagementCostCount;
 }
 
+// function for Total Player Cost 
 document.getElementById("player-cost-calculation").addEventListener('click', function () {
     playerCostElement('player-cost');
 })
 
+// function for Total Cost 
 document.getElementById('total-calculate').addEventListener('click', function () {
     const playerEmlementCost = playerCostElement('player-cost');
     const totalManagerrCost = managementCostElement('total-manager-cost');
