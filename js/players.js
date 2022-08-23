@@ -20,6 +20,8 @@ function displayPlayers() {
 
 function addToplayersArray(element) {
     element.disabled = true;
+    // element.classList.add('bg-sky-200');
+    element.classList.add('opacity-50');
     const pdName = element.parentNode.children[0].innerText;
     const pd = {
         pdName: pdName
