@@ -10,7 +10,7 @@ function displayPlayers() {
     for (let i = 0; i < playersArray.length; i++) {
         const tr = document.createElement("tr");
         tr.innerHTML = `
-                <th>${i + 1}</th> 
+                <th>${i + 1}.</th> 
                 <td>${playersArray[i].pdName}</td>
                 `;;
         const playersContainer = playersArrayContainer.appendChild(tr);
